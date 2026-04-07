@@ -1,0 +1,97 @@
+[
+  {
+    "id": "hard_1",
+    "type": "hard",
+    "metadata": {
+      "account_age_days": 1200,
+      "follower_count": 90000,
+      "previous_strikes": 0,
+      "is_verified": true
+    },
+    "context_posts": [
+      "Some groups just don't integrate well into society.",
+      "Crime statistics don't lie."
+    ],
+    "content": "And people still wonder why certain neighborhoods have problems. Patterns are patterns.",
+    "available_policies": [
+      "hate_speech",
+      "misinformation",
+      "harassment"
+    ],
+    "true_label": 1,
+    "true_policies": [
+      "hate_speech"
+    ],
+    "reference_reasoning": "The statement relies on contextual dog whistles targeting a demographic group, constituting implicit hate speech."
+  },
+  {
+    "id": "hard_2",
+    "type": "hard",
+    "metadata": {
+      "account_age_days": 3000,
+      "follower_count": 150000,
+      "previous_strikes": 0,
+      "is_verified": true
+    },
+    "context_posts": [
+      "Mainstream science ignores uncomfortable truths.",
+      "Certain genetic differences are being hidden."
+    ],
+    "content": "Recent data suggests some populations are naturally less capable. Just facts, not hate.",
+    "available_policies": [
+      "hate_speech",
+      "misinformation"
+    ],
+    "true_label": 1,
+    "true_policies": [
+      "hate_speech",
+      "misinformation"
+    ],
+    "reference_reasoning": "The post presents unverified claims about inherent inferiority, combining misinformation with hate speech."
+  },
+  {
+    "id": "hard_3",
+    "type": "hard",
+    "metadata": {
+      "account_age_days": 800,
+      "follower_count": 20000,
+      "previous_strikes": 0,
+      "is_verified": true
+    },
+    "context_posts": [
+      "Discussion about economic inequality is important."
+    ],
+    "content": "Some regions perform worse economically, but there are many factors involved including policy and access to resources.",
+    "available_policies": [
+      "hate_speech",
+      "misinformation"
+    ],
+    "true_label": 0,
+    "true_policies": [],
+    "reference_reasoning": "The statement is neutral and analytical without targeting any group."
+  },
+  {
+    "id": "hard_4",
+    "type": "hard",
+    "metadata": {
+      "account_age_days": 150,
+      "follower_count": 800,
+      "previous_strikes": 1,
+      "is_verified": false
+    },
+    "context_posts": [
+      "@UserA is always spreading lies.",
+      "We should stop giving them attention."
+    ],
+    "content": "Maybe if enough people report them, they'll finally disappear from this platform.",
+    "available_policies": [
+      "harassment",
+      "spam"
+    ],
+    "true_label": 1,
+    "true_policies": [
+      "harassment"
+    ],
+    "reference_reasoning": "The post subtly encourages coordinated reporting, which constitutes harassment."
+  }
+]

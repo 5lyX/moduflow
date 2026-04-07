@@ -1,0 +1,15 @@
+spec_version: 1
+name: moduflow
+version: 1.0.0
+description: "A multi-step content moderation simulator with shaped rewards and reasoning audit."
+author: "ModuFlow Team"
+type: space
+runtime: fastapi
+app: server.app:app
+port: 8000
+tags:
+  - content-moderation
+  - multi-step-reasoning
+  - shaped-rewards
+  - agent-grading
+

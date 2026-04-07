@@ -1,0 +1,91 @@
+[
+  {
+    "id": "medium_1",
+    "type": "medium",
+    "metadata": {
+      "account_age_days": 180,
+      "follower_count": 14200,
+      "previous_strikes": 1,
+      "is_verified": true
+    },
+    "context_posts": [
+      "Big Pharma hides natural cures.",
+      "Doctors don't want you to know the truth."
+    ],
+    "content": "The virus panic is exaggerated. But anyway, check out my herbal immunity booster—link in bio.",
+    "available_policies": [
+      "spam",
+      "misinformation",
+      "harassment"
+    ],
+    "true_label": 1,
+    "true_policies": [
+      "spam"
+    ],
+    "reference_reasoning": "The post promotes a product using misleading framing, constituting spam."
+  },
+  {
+    "id": "medium_2",
+    "type": "medium",
+    "metadata": {
+      "account_age_days": 400,
+      "follower_count": 2100,
+      "previous_strikes": 1,
+      "is_verified": false
+    },
+    "context_posts": [
+      "I can't stand fake influencers."
+    ],
+    "content": "Look at @JaneDoe's video. She's so talentless and annoying.",
+    "available_policies": [
+      "spam",
+      "misinformation",
+      "harassment"
+    ],
+    "true_label": 0,
+    "true_policies": [],
+    "reference_reasoning": "The post is insulting but does not rise to targeted harassment under policy."
+  },
+  {
+    "id": "medium_3",
+    "type": "medium",
+    "metadata": {
+      "account_age_days": 220,
+      "follower_count": 5000,
+      "previous_strikes": 0,
+      "is_verified": true
+    },
+    "context_posts": [],
+    "content": "Vaccines might have side effects in rare cases. Always consult a doctor.",
+    "available_policies": [
+      "spam",
+      "misinformation",
+      "harassment"
+    ],
+    "true_label": 0,
+    "true_policies": [],
+    "reference_reasoning": "The post expresses caution but does not spread misinformation."
+  },
+  {
+    "id": "medium_4",
+    "type": "medium",
+    "metadata": {
+      "account_age_days": 90,
+      "follower_count": 300,
+      "previous_strikes": 2,
+      "is_verified": false
+    },
+    "context_posts": [],
+    "content": "Everyone go report this guy's account, he doesn't deserve to be here.",
+    "available_policies": [
+      "spam",
+      "misinformation",
+      "harassment"
+    ],
+    "true_label": 1,
+    "true_policies": [
+      "harassment"
+    ],
+    "reference_reasoning": "The post encourages coordinated harassment against an individual."
+  }
+]
