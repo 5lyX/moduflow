@@ -41,6 +41,21 @@ class ModuflowEnvironment(Environment):
         self.efficiency_grader = EfficiencyGrader()
         self.reasoning_grader = ReasoningGrader()
         self.length_grader = LengthGrader() # R_len
+
+        # State Initialization (for safe usage before reset)
+        self.history = []
+        self.analysis_notes = []
+        self.selected_policies = []
+        self._content_fetched = False
+        self.content = ""
+        self.available_policies = []
+        self.true_label = 0
+        self.true_policies = []
+        self.user_metadata = {}
+        self.context_posts = []
+        self.max_steps = 6
+        self.current_task = {}
+        
         self.tasks = []
         self._load_tasks()
         
