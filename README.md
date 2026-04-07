@@ -129,8 +129,10 @@ $R_{total} = 0.55 \times \text{TaskScore} + 0.20 \times \text{Format} + 0.15 \ti
 
 Where:
 
-**TaskScore (55%)**
-$TaskScore = 0.40 \times \text{Accuracy} + 0.40 \times \text{Policy\_F1} + 0.20 \times \text{Reasoning}$
+### TaskScore (55%)
+$$
+\text{TaskScore} = 0.40 \times \text{Accuracy} + 0.40 \times \text{Policy\_F1} + 0.20 \times \text{Reasoning}
+$$
 
 **Components**
 - **Accuracy** → correct label (0/1)
@@ -151,7 +153,10 @@ $TaskScore = 0.40 \times \text{Accuracy} + 0.40 \times \text{Policy\_F1} + 0.20 
 - Missing reasoning: -0.3
 - No `ANALYZE`: -0.2
 - No `READ`: -0.1
-- **Overconfidence penalty**: $\max(0, \text{confidence} - \text{policy\_score}) \times 0.3$
+- **Overconfidence penalty**:
+$$
+\max(0, \text{confidence} - \text{policy\_score}) \times 0.3
+$$
 
 ---
 
