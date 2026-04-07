@@ -130,9 +130,7 @@ $R_{total} = 0.55 \times \text{TaskScore} + 0.20 \times \text{Format} + 0.15 \ti
 Where:
 
 ### TaskScore (55%)
-$$
-\text{TaskScore} = 0.40 \times \text{Accuracy} + 0.40 \times \text{Policy\_F1} + 0.20 \times \text{Reasoning}
-$$
+$TaskScore = 0.40 \times \text{Accuracy} + 0.40 \times \text{Policy\_F1} + 0.20 \times \text{Reasoning}$
 
 **Components**
 - **Accuracy** → correct label (0/1)
@@ -153,10 +151,7 @@ $$
 - Missing reasoning: -0.3
 - No `ANALYZE`: -0.2
 - No `READ`: -0.1
-- **Overconfidence penalty**:
-$$
-\max(0, \text{confidence} - \text{policy\_score}) \times 0.3
-$$
+- **Overconfidence penalty**: $\max(0, \text{confidence} - \text{policy\_score}) \times 0.3$
 
 ---
 
@@ -206,27 +201,12 @@ python inference.py
 
 ---
 
-## 8. Baseline Agent
+## 8. Baseline Results
 
-We provide a LLM-based autonomous agent:
+Used `Qwen2.5-72B-Instruct` as a LLM-based autonomous agent and `benchmark.py` to get the below table
 
-**Features**
-- step-by-step reasoning
-- history-aware decision making
-- structured JSON actions
-
-**Model Options**
-- `gpt-4o-mini`
-- `Qwen2.5-72B-Instruct`
-
----
-
-## 9. Baseline Results
-
-| Difficulty | Avg Score |
-| :--- | :--- |
-| Easy | ~0.75–0.90 |
-| Medium | ~0.50–0.70 |
-| Hard | ~0.30–0.55 |
-
-**Success Threshold**: score >= 0.30
+| Difficulty | Avg Score | Success Rate |
+| :--- | :--- | :--- |
+| Easy | 0.89 | 100% |
+| Medium | 0.57 | 0.75% |
+| Hard | 0.80 | 100% |
