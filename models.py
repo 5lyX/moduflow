@@ -24,8 +24,8 @@ class ActionPayload(BaseModel):
 
 class ModuflowAction(Action):
     """Action for the ModuFlow environment."""
-    action_type: str = Field(..., description="Type of action: READ, SELECT_POLICY, ANALYZE, FINAL_ANSWER, REVISE")
-    payload: ActionPayload = Field(..., description="Payload data for the action")
+    action_type: str = Field(default="REVISE", description="Type of action: READ, SELECT_POLICY, ANALYZE, FINAL_ANSWER, REVISE")
+    payload: ActionPayload = Field(default_factory=ActionPayload, description="Payload data for the action")
 
 
 class ModuflowObservation(Observation):

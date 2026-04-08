@@ -41,7 +41,7 @@ class ModuflowEnvironment(Environment):
         self.efficiency_grader = EfficiencyGrader()
         self.reasoning_grader = ReasoningGrader()
         self.length_grader = LengthGrader() # R_len
-
+        
         # State Initialization (for safe usage before reset)
         self.history = []
         self.analysis_notes = []
@@ -59,8 +59,23 @@ class ModuflowEnvironment(Environment):
         self.tasks = []
         self._load_tasks()
         
-        import random
-        random.shuffle(self.tasks)
+        # Interleave tasks to ensure variety (easy -> medium -> hard)
+        tasks_by_type = {"easy": [], "medium": [], "hard": []}
+        for t in self.tasks:
+            ttype = t.get("type", "easy")
+            if ttype in tasks_by_type:
+                tasks_by_type[ttype].append(t)
+        
+        interleaved = []
+        max_len = max(len(tasks_by_type["easy"]), len(tasks_by_type["medium"]), len(tasks_by_type["hard"])) if self.tasks else 0
+        for i in range(max_len):
+            for ttype in ["easy", "medium", "hard"]:
+                if i < len(tasks_by_type[ttype]):
+                    interleaved.append(tasks_by_type[ttype][i])
+        
+        if interleaved:
+            self.tasks = interleaved
+            
         self._task_idx = 0
         
     def _load_tasks(self):
@@ -118,7 +133,7 @@ class ModuflowEnvironment(Environment):
             history=self.history,
             step_id=self._state.step_count,
             max_steps=self.max_steps,
-            task_type=self.current_task.get("id", "unknown"),
+            task_type=self.current_task.get("type", "unknown"),
             done=done,
             reward=reward,
         )
@@ -262,8 +277,8 @@ class ModuflowEnvironment(Environment):
             if format_score == 0.0:
                 R_total = -0.1 # Heavily punish non-JSON responses terminally
             
-            # Final Clamping [0.0, 1.0]
-            step_reward = max(0.0, min(1.0, R_total))
+            # Final Clamping (0, 1) strictly
+            step_reward = max(0.01, min(0.99, R_total))
             
         return self._build_obs(step_reward, done)
 
